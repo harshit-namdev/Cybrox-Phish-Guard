@@ -24,6 +24,8 @@ This process happens seamlessly in the background, ensuring continuous protectio
 ## Media and Look
 https://github.com/user-attachments/assets/5e8e9a8f-a589-4b6c-b77e-94776ebfd5f4
 
+https://github.com/user-attachments/assets/d3c11c9b-5221-45d1-9354-4d0f080d64ab
+
 ## Usage
 
 - The extension icon will show green when protection is active
