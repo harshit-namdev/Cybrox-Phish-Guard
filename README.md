@@ -20,6 +20,10 @@ PhishGuard actively protects you by:
 
 This process happens seamlessly in the background, ensuring continuous protection without interrupting your browsing experience.
 
+
+## Media and Look
+https://github.com/user-attachments/assets/5e8e9a8f-a589-4b6c-b77e-94776ebfd5f4
+
 ## Usage
 
 - The extension icon will show green when protection is active
