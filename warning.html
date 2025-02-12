@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>PhishGuard - Security Warning</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background-color: #ffebee;
+    }
+
+    .warning-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .warning-icon {
+      color: #e74c3c;
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .warning-title {
+      color: #e74c3c;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .warning-text {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .url-display {
+      word-break: break-all;
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 4px;
+      margin: 20px 0;
+    }
+
+    .button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    .back-button {
+      background-color: #3498db;
+      color: white;
+    }
+
+    .proceed-button {
+      background-color: #e74c3c;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="warning-container">
+    <div class="warning-icon"><img src="images/waringsign.jpeg" width="70px" height="60px"></div>
+    <h1 class="warning-title">Security Warning</h1>
+    <p class="warning-text">This website has been identified as potentially dangerous. It may attempt to steal your
+      personal information or install malware on your device.</p>
+    <!-- <div class="url-display">
+      <strong></strong>
+      <span id="dangerous-url"></span>
+    </div> -->
+    <div class="url-display">
+      <strong>Threat Type : Malicious Link</strong>
+      <span id="threat-type"></span>
+    </div>
+    <button class="button back-button" id="goBack" >Go Back (Recommended)</button>
+    <button class="button proceed-button" id="proceed">Proceed Anyway (Unsafe)</button>
+    <button class="button report-button back-button" id="reportPhish">Report</button>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const dangerousUrl = urlParams.get('url');
+    const threatType = urlParams.get('threat');
+
+    document.getElementById('dangerous-url').textContent = dangerousUrl;
+    document.getElementById('threat-type').textContent = threatType;
+
+    document.getElementById('goBack').addEventListener('click', () => {
+      history.back();
+    });
+
+    document.getElementById('proceed').addEventListener('click', () => {
+      if (confirm('Are you sure you want to proceed? This site may be dangerous.')) {
+        window.location.href = dangerousUrl;
+      }
+    });
+
+  </script>
+  <script src="js/popup.js"></script>
+  <script src="js/content.js"></script>
+
+
+</body>
+
+</html>
